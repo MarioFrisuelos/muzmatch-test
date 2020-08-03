@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "8a1d2e68-ef0b-497d-a922-a4f38bda8971",
+		"name": "muzzmatch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{MUZMATCH}}/users?email=user@random.com&name=Random User&password=ThisIsATest5?&gender=male&age=29&interest_gender=female&latitude=51.530566&longitude=-0.121013",
+					"host": [
+						"{{MUZMATCH}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "user@random.com"
+						},
+						{
+							"key": "name",
+							"value": "Random User"
+						},
+						{
+							"key": "password",
+							"value": "ThisIsATest5?"
+						},
+						{
+							"key": "gender",
+							"value": "male"
+						},
+						{
+							"key": "age",
+							"value": "29"
+						},
+						{
+							"key": "interest_gender",
+							"value": "female"
+						},
+						{
+							"key": "latitude",
+							"value": "51.530566"
+						},
+						{
+							"key": "longitude",
+							"value": "-0.121013"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List profiles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "a3e51e0b24a8b1f1beaaad26d0456d6f",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{MUZMATCH}}/users/profiles?user_id=11",
+					"host": [
+						"{{MUZMATCH}}"
+					],
+					"path": [
+						"users",
+						"profiles"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "11"
+						},
+						{
+							"key": "gender",
+							"value": "female",
+							"disabled": true
+						},
+						{
+							"key": "age",
+							"value": "25",
+							"disabled": true
+						},
+						{
+							"key": "attractiveness",
+							"value": "true",
+							"description": "boolean",
+							"disabled": true
+						},
+						{
+							"key": "location",
+							"value": "true",
+							"description": "boolean",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set swipe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "a3e51e0b24a8b1f1beaaad26d0456d6f",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{MUZMATCH}}/swipe?user_id=11&referral_id=6&swipe=1",
+					"host": [
+						"{{MUZMATCH}}"
+					],
+					"path": [
+						"swipe"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "11"
+						},
+						{
+							"key": "referral_id",
+							"value": "6"
+						},
+						{
+							"key": "swipe",
+							"value": "1",
+							"description": "boolean"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login + create token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{MUZMATCH}}/login?email=user@random.com&password=ThisIsATest5?",
+					"host": [
+						"{{MUZMATCH}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "user@random.com"
+						},
+						{
+							"key": "password",
+							"value": "ThisIsATest5?"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user photos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "a3e51e0b24a8b1f1beaaad26d0456d6f",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{MUZMATCH}}/users/photos?user_id=11&name=Another pic of me&url=url-of-the-img-storage-in-aws.com",
+					"host": [
+						"{{MUZMATCH}}"
+					],
+					"path": [
+						"users",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "11"
+						},
+						{
+							"key": "name",
+							"value": "Another pic of me"
+						},
+						{
+							"key": "url",
+							"value": "url-of-the-img-storage-in-aws.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
